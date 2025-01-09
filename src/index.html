@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>تسک دوره جاوااسکریپت</title>
+    <link rel="stylesheet" href="./styles/index.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="transactionBtn">
+        <button class="btn btn-transaction-promise" >پردازش تراکنش ها با پرامیس</button>
+        <button class="btn btn-transaction-async">پردازش تراکنش ها با async/await</button>
+      </div>
+      <div class="titleSectionAndSearch">
+        <h2>لیست تراکنش ها</h2> 
+        <div class="searchInputSection">
+          <input type="text" class="searchInput" placeholder="جستجو تراکنش ..." onchange="searchTransaction(event)" />
+          <i class="fa fa-search icon"></i>
+        </div>
+      </div>
+      <div class="result">
+        <h2>لیست تراکنش های شما</h2>
+        <table class="transactionTable">
+          <thead>
+              <tr>
+                  <th>ردیف</th>
+                  <th>نوع تراکنش</th>
+                  <th class="arrowSection"><label>مبلغ</label><span class="arrow priceArrow"><i class="fa-solid fa-chevron-down"></i></span></th>
+                  <th>شماره پیگیری</th>
+                  <th class="arrowSection"><label>تاریخ تراکنش</label><span class="arrow dateArrow"><i class="fa-solid fa-chevron-down"></i></span></th>
+              </tr>
+          </thead>
+          <tbody class="transaction-list">
+              
+          </tbody>
+      </table>
+      </div>
+    </div>
+    <script src="./js/index.js"></script>
+  </body>
+</html>
