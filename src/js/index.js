@@ -2,6 +2,8 @@
 const btnTransactionPromise = document.querySelector(
   ".btn-transaction-promise"
 );
+
+const transactionBtn = document.querySelector('.transactionBtn')
 const btnTransactionAsync = document.querySelector(".btn-transaction-async");
 
 const transactionList = document.querySelector(".transaction-list");
@@ -43,12 +45,15 @@ function getTransactionWithPromise() {
       }
       return res.json();
     })
-    .then((transactions) => displayTransactions(transactions))
+    .then((transactions) => {
+      
+      displayTransactions(transactions)
+    })
     .catch((err) => console.log(err));
 }
 
 async function getTranactionWithAsync() {
-  const data = await getData(baseURL + "transactions");
+  const data = await getData(baseURL);
   const transactions = await data.json();
   displayTransactions(transactions);
 }
@@ -66,6 +71,7 @@ function displayTransactions(data) {
   <td class="date">${changeDateFormat(item.date)}</td>
 </tr>`;
     });
+    transactionBtn.style.display = "none"
     transactionList.innerHTML = result;
 }
 
