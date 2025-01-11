@@ -53,9 +53,16 @@ function getTransactionWithPromise() {
 }
 
 async function getTranactionWithAsync() {
-  const data = await getData(baseURL);
-  const transactions = await data.json();
-  displayTransactions(transactions);
+  try
+  {
+    const data = await getData(baseURL);
+    const transactions = await data.json();
+    displayTransactions(transactions);
+  }
+  catch(err)
+  {
+    console.log(err)
+  }
 }
 
 function displayTransactions(data) {
